@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 const CATEGORIES = [
-  { name: 'Airdrops', key: 'airdrops', itemKey: 'slug', linkPrefix: '/airdrops/' },
+  { name: 'Airdrops', key: 'airdrops', itemKey: 'slug', linkPrefix: '/all-airdrops/' },
   { name: 'Games', key: 'games', itemKey: 'slug', linkPrefix: '/games/' },
   { name: 'Farming', key: 'farm-tokens', itemKey: 'slug', linkPrefix: '/farm-tokens/' },
   { name: 'Platforms', key: 'reward-tasks', itemKey: '_id', linkPrefix: '/reward-tasks/'},
@@ -39,9 +39,11 @@ async function fetchCategoryData(category) {
     }
 
     let data = await response.json();
-    if (!Array.isArray(data)) {
+    if (!Array.isArray(data) && category.key == 'airdrops') {
         console.warn(`Data for ${category.key} is not an array, attempting to parse as object`);
-        data = Object.values(data);
+        console.log(data, '========================')
+        data = data.airdrops;
+        console.log('data after: ', data)
      }
 
     return data.filter(item => item);
