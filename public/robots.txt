@@ -1,6 +1,9 @@
-// public/robots.txt
+# *
 User-agent: *
 Allow: /
-Allow: /logo.png
-Allow: /favicon.ico
-Allow: /apple-touch-icon.png
+
+# Host
+Host: https://www.web3fruity.com
+
+# Sitemaps
+Sitemap: https://www.web3fruity.com/sitemap.xml

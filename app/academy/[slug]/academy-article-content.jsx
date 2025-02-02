@@ -36,8 +36,6 @@ const AcademyArticleContent = (initialData) => {
   const [headings, setHeadings] = useState([]);
   const slug = academyArticleData.slug;
 
-
-
   // Fetch additional articles
   useEffect(() => {
     const fetchAdditionalArticles = async (track) => {
@@ -233,8 +231,8 @@ const AcademyArticleContent = (initialData) => {
           {/* author details */}
           <div className='flex'>
           <p className="flex items-center mt-8 font-semibold text-gray-500">
-                <FaUser className="mr-2" />
-                 <span className='font-light italic'>by </span>{author}
+                <FaUser className="mr-2 mb-1" />
+                 <span className='font-light mr-2 '>Writer: </span> {author}
             </p>
             {authorSocials && authorSocials.map((link, index) => {
               let icon;
