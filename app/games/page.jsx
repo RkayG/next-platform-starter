@@ -204,39 +204,30 @@ const Games = () => {
             }
             </Slider>
           </div>
-        
         </div>
 
-        <h2 className="text-2xl font-bold mb-4 ml-4 text-center bg-clip-text 
-            text-transparent bg-gradient-to-r from-blue-500 to-red-500">All Games</h2>
-
-      <div className="relative mb-4 px-4">
-          <div className="flex overflow-x-auto scrollbar-hide gap-2 pb-4">
+        <div className="my-8 px-4"> 
+          <h2 className="text-2xl font-bold mb-4 text-center bg-clip-text 
+            text-transparent bg-gradient-to-r from-blue-500 to-red-500">
+            All Games
+          </h2>
+          <div className="w-full flex flex-wrap justify-center gap-2 my-4">
             {genres.map((genre, index) => (
               <button
                 key={index}
-                className={`flex-none px-4 py-2 rounded-full whitespace-nowrap
+                className={`px-4 py-2 rounded-full whitespace-nowrap
                   ${selectedGenre === genre 
                     ? 'bg-blue-500 text-white' 
-                    : 'bg-gray-50 border border-gray-300 text-blue-900'
-                  } hover:bg-blue-500 hover:text-white transition-colors duration-200`}
+                    : 'bg-gray-50 border border-gray-300 text-blue-900'}
+                  hover:bg-blue-500 hover:text-white transition-colors duration-200`}
                 onClick={() => handleGenreFilter(genre)}
               >
                 {genre}
               </button>
             ))}
           </div>
-          {selectedGenre && (
-            <div className="flex justify-center mt-4">
-              <button
-                className="px-4 py-2 rounded-md bg-orange-600 text-white hover:bg-orange-700 transition-colors duration-200"
-                onClick={() => handleGenreFilter("")}
-              >
-                Clear
-              </button>
-            </div>
-          )}
         </div>
+
 
         {isLoading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

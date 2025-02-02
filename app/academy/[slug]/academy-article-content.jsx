@@ -222,7 +222,7 @@ const AcademyArticleContent = (initialData) => {
         <div className="p-4 mt-12">
           <h1 className="text-3xl font-bold text-center my-6 max-w-[785px]">{postHeading}</h1>
           <span className='flex flex-wrap justify-between mb-6 mx-4'>
-            <p className='text-gray-500 font-semibold'>Published {formatTimestamp(timestamp)}</p>
+            <p className='text-gray-500 font-semibold'>{formatTimestamp(timestamp)}</p>
             <div className='flex flex-wrap gap-4 text-lg text-gray-500'>
               <FaCopy onClick={handleCopyLink} className="cursor-pointer" />
               <FaFacebookF onClick={handleShareToFacebook} className="cursor-pointer" />
@@ -234,7 +234,7 @@ const AcademyArticleContent = (initialData) => {
           <div className='flex'>
           <p className="flex items-center mt-8 font-semibold text-gray-500">
                 <FaUser className="mr-2" />
-                 Written by: {author}
+                 <span className='font-light italic'>by </span>{author}
             </p>
             {authorSocials && authorSocials.map((link, index) => {
               let icon;

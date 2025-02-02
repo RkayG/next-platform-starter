@@ -31,7 +31,7 @@ export default function Page() {
                 siteUrl="https://www.web3fruity.com"
             />
       
-        <main className="relative">
+        <section className="relative">
             <ParentComponent />
             <Suspense fallback={<LoadingFallback />}>
                 <FeaturedEvent />
@@ -61,7 +61,7 @@ export default function Page() {
             <Disclaimer />
             <BottomSubscribe />
             <ScrollBackTop />
-        </main>
+        </section>
         </>
     );
 }
